@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <h1>Formulário</h1>
+
+    <h3>Formulário get</h3>
+    <form action="index.html" method="get">
+        <input type="tel" name="q" id="" value="twitter">
+        <input type="submit" value="Enviar">
+    </form>
+
+
+    <h3>Formulário post</h3>
+    <form action="index.html" method="post">
+        <input type="tel" name="q" id="" value="twitter">
+        <input type="submit" value="Enviar">
+    </form>
+
+
+    <h3>Formulário de login Facebook</h3>
+    <form action="index.html" method="get">
+        <input type="text" name="nome" id="nome" placeholder="Nome" required>
+        <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome">
+
+        <br>
+        <br>
+
+        <input type="text" name="celular-email" id="celular-email" placeholder="Celular ou E-mail">
+        <input type="password" name="senha" id="senha" placeholder="Nova senha">
+
+        <br>
+        <br>
+
+        <label>Data de nascimento:</label>
+
+        <br>
+
+        <select name="dia" id="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <select name="mes" id="">
+            <option value="Janeiro">Janeiro</option>
+            <option value="Fevereiro">Fevereiro</option>
+            <option value="Março">Março</option>
+            <option value="Abril">Abril</option>
+            <option value="Maio">Maio</option>
+        </select>
+
+        <select name="dia" id="">
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+        </select>
+
+        <br>
+        <br>
+        <label>Gêneros:</label>
+
+        <br>
+
+        <label for="feminino">Feminino</label>
+        <input type="radio" name="genero" id="feminino" value="feminino">
+        <label for="masculino">Masculino</label>
+        <input type="radio" name="genero" id="masculino" value="masculino">
+        <label for="Personalizado">Personalizado</label>
+        <input type="radio" name="genero" id="personalizado" value="personalizado">
+
+        <br>
+        <br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+</body>
+
+</html>
