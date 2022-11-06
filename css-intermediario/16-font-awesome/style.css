@@ -1,0 +1,12 @@
+.fa-facebook-square {
+    font-size: 50px;
+    color: orange;
+}
+
+.fa-trash-alt {
+    color: red;
+}
+
+.fa-facebook-square:hover {
+    color: blue;
+}
