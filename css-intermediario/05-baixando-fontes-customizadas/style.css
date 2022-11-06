@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Eacalogica';
+    src: url('./fonts/eacologica-round-slab-ffp.otf'), 
+        url('./fonts/eacologica-round-slab-ffp.ttf');
+}
+
+h1 {
+    font-family: 'Eacalogica', Arial, Helvetica, sans-serif;
+}
