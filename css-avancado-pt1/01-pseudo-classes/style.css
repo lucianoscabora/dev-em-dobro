@@ -1,0 +1,25 @@
+p:first-child {
+    color: aquamarine;
+}
+
+p:last-child {
+    color: crimson;
+}
+
+p:not(.padrao) {
+    color: yellow;
+}
+
+p:nth-child(odd) {
+    color: violet;
+}
+
+li:nth-child(2n) {
+    color: skyblue
+}
+
+li:last-child(1) {
+    color: azure;
+}
+
+
