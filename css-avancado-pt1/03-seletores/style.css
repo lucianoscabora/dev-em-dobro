@@ -1,0 +1,19 @@
+h1 {
+    color: darkgreen;
+}
+
+.paragrafo {
+    font-size: 40px;
+}
+
+#paragrafo-2 {
+    color: orange;
+}
+
+.titulo.laranja {
+    color: orange;
+}
+
+.titulo.vermelho {
+    color: red;
+}
