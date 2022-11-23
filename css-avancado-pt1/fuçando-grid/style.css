@@ -1,0 +1,41 @@
+.main-div {
+    background-color: #f7f7f7;
+    max-width: 1440px;
+    display: grid;
+    /* grid-template-areas: "cabecalho cabecalho cabecalho"
+    "left-side main-container right-side"
+    "left-side main-container right-side"
+    "footer footer footer"; */
+
+    grid: "cabecalho cabecalho cabecalho" 50px
+    "left-side main-container right-side" 100px
+    "left-side main-container right-side" 100px
+    "footer footer footer" 50px;
+
+    padding: 10px;
+}
+
+.cabecalho {
+    background-color: aquamarine;
+    grid-area: cabecalho;
+}
+
+.left-side {
+    grid-area: left-side;
+    background-color: cornflowerblue;
+}
+
+.right-side {
+    grid-area: right-side;
+    background-color: yellowgreen;
+}
+
+.main-container {
+    grid-area: main-container;
+    background-color: hotpink;
+}
+
+.rodape {
+    grid-area: footer;
+    background-color: peru;
+}
