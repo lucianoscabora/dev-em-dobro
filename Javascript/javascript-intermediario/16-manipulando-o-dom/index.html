@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulando elementos do DOM</title>
+  </head>
+  <body>
+    <h1>Manipulando elementos do DOM</h1>
+
+    <article class="post">
+      <p><strong>Luciano Scabora</strong> <span>lorem ipsum s</span></p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quos,
+        sed perferendis voluptates asperiores ut natus atque molestiae nobis
+        explicabo debitis, ducimus ipsam? Temporibus ullam perspiciatis
+        explicabo. Sequi, quo ut.
+      </p>
+
+      <br />
+
+      <div class="comentarios">
+        <h3>Comentarios</h3>
+        <input
+          type="text"
+          name="novo-comentario"
+          placeholder="Digite seu comentario"
+        />
+
+        <button onclick="adicionarComentario()">Adicionar comentario</button>
+        <br />
+
+        <div id="novos-comentarios"></div>
+      </div>
+    </article>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
