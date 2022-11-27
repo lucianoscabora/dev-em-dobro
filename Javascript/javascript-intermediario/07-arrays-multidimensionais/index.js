@@ -3,5 +3,4 @@ let descricaoFilmes = [
     ['Batman', 5, false]
                       ]
 
-
     console.table(descricaoFilmes[0][3][0]);
