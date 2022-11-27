@@ -1,0 +1,15 @@
+.quadrado-1 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.quadrado-2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.cor-trocada {
+    background-color: yellow;
+}
