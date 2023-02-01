@@ -1,0 +1,15 @@
+{
+  "name": "01-teste-com-jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calcular-valor-pedidos.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watchAll *.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.1"
+  }
+}
