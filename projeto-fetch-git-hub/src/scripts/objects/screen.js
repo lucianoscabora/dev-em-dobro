@@ -1,0 +1,35 @@
+const screen = {
+    userProfile: document.querySelector('.profile-data'),
+    renderUser(user) {
+
+        this.userProfile.innerHTML = `<div class="info">
+        <img src="${user.avatarUrl}" alt ="foto de perfil do usuario" />
+        <div class="data">
+            <h1>${user.name ?? 'Não possui nome cadastrado' }</h1>
+            <p>${user.bio ?? 'Não possui bio cadastrada' }</p>
+            </div>
+            </div>
+            `
+
+            let repositoriesItems = ''
+            user.repositories.forEach(repo => repositoriesItems +=  
+                
+                `
+                <li> 
+                    <a href="${repo.html_url}" target="_blank"> ${repo.name} </a>
+                </li>
+                `
+                )
+                if(user.repositories.length > 0) {
+                    this.userProfile.innerHTML += 
+                    `
+                    <div class="repositories section">
+                        <h2>Repositories</h2>
+                        <ul>${repositoriesItems}</ul>
+                    </div>
+                    `
+                }
+    }
+}
+
+export { screen };
