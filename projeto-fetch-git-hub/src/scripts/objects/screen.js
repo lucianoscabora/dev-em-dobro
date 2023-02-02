@@ -28,7 +28,7 @@ const screen = {
                         <ul>${repositoriesItems}</ul>
                     </div>
                     `
-                }
+        }
     }
 }
 
