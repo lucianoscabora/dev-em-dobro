@@ -25,22 +25,27 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
 
     if (isEnterKeyPressed) {
         if (validateEmptyInput(userName)) return;
-        getUserData(userName);
     }
 })
 
 
 async function getUserData(userName) {
-
-    const eventResponse = await fetchUserEvents(userName)
     const userResponse = await fetchUser(userName)
-    console.log(userResponse);
-    
-    
+    const eventResponse = await fetchUserEvents(userName)
+    console.log(eventResponse);
 
-    /* console.log(eventResponse);
-    console.log(eventResponse[6].payload.commits[0].message);
-    console.log(eventResponse[6].repo.name); */
+    /* for(let i = 0; i<user.events.length; i++) {
+        let receiveData = user.events?.[i]?.repo?.name;
+        console.log(receiveData);  
+    } */
+
+   eventResponse.map((item, index) => {
+    const fetchCommitComents = eventResponse[index].payload.commits?.[0].message;
+    const fetchRepoNames = eventResponse[index].repo.name;
+    console.log(`Repositorio: ${fetchRepoNames} e Commits: ${fetchCommitComents}`)
+    
+   })
+
 
     if(userResponse.message === 'Not Found') {
         screen.renderNotFound()
@@ -48,12 +53,12 @@ async function getUserData(userName) {
     }
 
     const repositoriesResponse = await fetchRepos(userName)
+  
 
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)
-    console.log(repositoriesResponse);
+    user.setEvents(eventResponse)
 
     screen.renderUser(user)
 }
-
 

@@ -10,6 +10,7 @@ const user = {
     language: '',
     stargazers_count: '',
     forks_count: '',
+    events: [],
     setInfo(gitHubUser) {
         this.avatarUrl = gitHubUser.avatar_url,
         this.name = gitHubUser.name,
@@ -17,6 +18,7 @@ const user = {
         this.userName = gitHubUser.login
         this.followers = gitHubUser.followers
         this.following = gitHubUser.following
+        this.events = gitHubUser.events;
     },
     setRepositories(repositories) {
         this.repositories = repositories;
@@ -24,7 +26,9 @@ const user = {
         this.watchers = repositories;
         this.forks_count = repositories;
         this.stargazers_count = repositories;
-
+    },
+    setEvents(events) {
+        this.events = events;
     }
 }
 

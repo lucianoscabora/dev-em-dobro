@@ -6,4 +6,3 @@ async function fetchUserEvents(userName) {
 }
 
 export { fetchUserEvents }
-
