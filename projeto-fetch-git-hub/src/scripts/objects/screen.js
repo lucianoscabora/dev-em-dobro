@@ -19,7 +19,7 @@ const screen = {
       document.querySelector('.commits-data').innerHTML += receiveData;
     }
     ` 
-
+ 
     `
     for (let z = 0; z <= 10; z++) {
       let receivedComments = user.events[z]?.payload.commits?.[0]?.message;
