@@ -134,7 +134,18 @@ main {
   justify-content: center;
 }
 
+.container .profile-data .repositories li {
+  width: 300px;
+}
+
+.container .profile-data .repositories li span {
+  display: flex;
+  margin: 10px;
+}
+
 .container .profile-data .repositories ul li a{
+  min-width: 200px;
+  min-height: 200px;
   padding: 20px;
   border: 1px solid grey;  
   margin: 20px;

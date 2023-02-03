@@ -1,5 +1,6 @@
 import { fetchUser } from "./scripts/services/user.js";
 import { fetchRepos } from "./scripts/services/repositories.js";
+import { fetchUserEvents } from "./scripts/services/events.js";
 
 import { user } from "./scripts/objects/user.js";
 import { screen } from "./scripts/objects/screen.js";
@@ -31,8 +32,15 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
 
 async function getUserData(userName) {
 
+    const eventResponse = await fetchUserEvents(userName)
     const userResponse = await fetchUser(userName)
     console.log(userResponse);
+    
+    
+
+    /* console.log(eventResponse);
+    console.log(eventResponse[6].payload.commits[0].message);
+    console.log(eventResponse[6].repo.name); */
 
     if(userResponse.message === 'Not Found') {
         screen.renderNotFound()
@@ -43,6 +51,7 @@ async function getUserData(userName) {
 
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)
+    console.log(repositoriesResponse);
 
     screen.renderUser(user)
 }

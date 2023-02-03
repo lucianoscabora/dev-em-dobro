@@ -12,13 +12,16 @@ const screen = {
             </div>
             </div>
             `
-
             let repositoriesItems = ''
             user.repositories.forEach(repo => repositoriesItems +=  
                 
                 `
                 <li> 
-                    <a href="${repo.html_url}" target="_blank"> ${repo.name} </a>
+                    <a href="${repo.html_url}" target="_blank">
+                    <span>${repo.language}</span>
+                    <span>${repo.stargazers_count}</span>
+                    <span>${repo.forks_count}</span>
+                    <span>${repo.watchers}</span>${repo.name} </a>
                 </li>
                 `
                 )
@@ -35,6 +38,7 @@ const screen = {
     renderNotFound() {
         this.userProfile.innerHTML = "<h3> Usuário não encontrado </h3>" 
     }
+    
 }
 
 export { screen };
