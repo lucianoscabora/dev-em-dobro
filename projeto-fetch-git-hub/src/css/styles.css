@@ -27,11 +27,21 @@ main {
 .data-event {
   overflow-y: scroll;
   text-align: left;
-  width: 600px;
+  width: 700px;
   border: 1px solid black;
   justify-content: space-between;
   height: 200px;
   display: flex;
+}
+
+.list-ev li {
+  padding-top: 5px;
+  margin-bottom: 4px;
+}
+
+.list-rep li {
+  padding-top: 5px;
+  margin-bottom: 4px;
 }
 
 .devicon-github-original{

@@ -33,7 +33,9 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
 async function getUserData(userName, fetchCommitComents) {
     const userResponse = await fetchUser(userName)
     const eventResponse = await fetchUserEvents(userName)
-    console.log(eventResponse);
+    //console.log(eventResponse);
+
+    
 
     /* for(let i = 0; i<user.events.length; i++) {
         let receiveData = user.events?.[i]?.repo?.name;

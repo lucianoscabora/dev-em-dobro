@@ -18,7 +18,7 @@ const screen = {
         (repositoriesItems += `
                 <li> 
                     <a href="${repo.html_url}" target="_blank">
-                    <span>${repo.language}<i class="fa-solid fa-laptop-code"></i></span>
+                    <span>${repo.language ?? "N/A"}<i class="fa-solid fa-laptop-code"></i></span>
                     <span>${repo.stargazers_count}<i class="fa-regular fa-star"></i></span>
                     <span>${repo.forks_count}<i class="fa-sharp fa-solid fa-code-fork"></i></span>
                     <span>${repo.watchers}<i class="fa-regular fa-eye"></i></span>${repo.name} </a>
@@ -34,12 +34,9 @@ const screen = {
                     </div>
                     `;
     }
-
-
-   
-
+  
     let eventItems = "";
-    user.events.forEach((evt, index) => (eventItems += 
+    user.events.map((evt, index) => (eventItems += 
     `
     <li>
     <span class="repo-names">
@@ -50,8 +47,8 @@ const screen = {
     `)
     );
 
-    var repoNames = "";
-      user.events.map((evt, index) => ( repoNames +=
+    let repoNames = "";
+      user.events.map((evt, index) => ( repoNames += 
     `
     <li>
     <span class="repo-names">
@@ -77,6 +74,8 @@ const screen = {
     }
 
   },
+
+  
 
   renderNotFound() {
     this.userProfile.innerHTML = "<h3> Usuário não encontrado </h3>";

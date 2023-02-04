@@ -55,7 +55,20 @@ export { baseUrl, repositoriesQuantity}
 
     /*   for(let i = 0; i<user.events.length; i++) {
         if (user.events[i].type === "PushEvent") {
-         var asd = user.events[i]?.payload?.commits?.[0]?.message
+         var commentsFetched = user.events[i]?.payload?.commits?.[0]?.message
         }
 
       } */
+
+
+      /* let repoNames = "";
+      user.events.map((evt, index) => ( repoNames += 
+    `
+    <li>
+    <span class="repo-names">
+    ${user.events[index].payload?.commits?.[0].message}
+    </span>
+    </li>
+    
+      `
+      )) */
