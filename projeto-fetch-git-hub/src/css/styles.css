@@ -24,6 +24,16 @@ main {
   padding: 50px 0 0;      
 }
 
+.data-event {
+  overflow-y: scroll;
+  text-align: left;
+  width: 600px;
+  border: 1px solid black;
+  justify-content: space-between;
+  height: 200px;
+  display: flex;
+}
+
 .devicon-github-original{
   font-size: 60px;
   margin-bottom: 30px;
@@ -32,23 +42,6 @@ main {
 
 .section{
   padding: 70px 0;
-}
-
-.last-try {
-  display: flex;
-  flex-direction: row;
-  color: green;
-  margin: 32px;
-}
-
-.last-try ul {
-  display: flex;
-  flex-direction: column;
-}
-
-.last-try ul li {
-  display: flex;
-  
 }
 
 .container {
@@ -156,8 +149,14 @@ main {
 }
 
 .container .profile-data .repositories li span {
+  margin: 20px;
+  align-items: center ;
   display: flex;
   margin: 10px;
+}
+
+.container .profile-data .repositories li span i {
+  margin-left: 10px;
 }
 
 .container .profile-data .repositories ul li a{

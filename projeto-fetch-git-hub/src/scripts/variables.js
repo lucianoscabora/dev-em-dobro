@@ -51,3 +51,11 @@ export { baseUrl, repositoriesQuantity}
           document.querySelector('.list-reponames').innerHTML += receiveData;
         }
       } */
+
+
+    /*   for(let i = 0; i<user.events.length; i++) {
+        if (user.events[i].type === "PushEvent") {
+         var asd = user.events[i]?.payload?.commits?.[0]?.message
+        }
+
+      } */

@@ -18,10 +18,10 @@ const screen = {
         (repositoriesItems += `
                 <li> 
                     <a href="${repo.html_url}" target="_blank">
-                    <span>${repo.language}</span>
-                    <span>${repo.stargazers_count}</span>
-                    <span>${repo.forks_count}</span>
-                    <span>${repo.watchers}</span>${repo.name} </a>
+                    <span>${repo.language}<i class="fa-solid fa-laptop-code"></i></span>
+                    <span>${repo.stargazers_count}<i class="fa-regular fa-star"></i></span>
+                    <span>${repo.forks_count}<i class="fa-sharp fa-solid fa-code-fork"></i></span>
+                    <span>${repo.watchers}<i class="fa-regular fa-eye"></i></span>${repo.name} </a>
                 </li>
                 `)
     );
@@ -35,35 +35,44 @@ const screen = {
                     `;
     }
 
+
+   
+
     let eventItems = "";
-    user.events.forEach(
-      (evt, index) =>
-        (eventItems += `    
-    <li class="list-of-events">
+    user.events.forEach((evt, index) => (eventItems += 
+    `
+    <li>
     <span class="repo-names">
     ${evt.repo.name}
     </span>
     </li>
-
-    <li class="list-of-events">
-    <span class="repo-names">
-    ${user.events[index].payload?.commits?.[0].message}
-    </span>
-    </li>
-
     
     `)
     );
 
+    var repoNames = "";
+      user.events.map((evt, index) => ( repoNames +=
+    `
+    <li>
+    <span class="repo-names">
+    ${user.events[index].payload?.commits?.[0].message}
+    </span>
+    </li>
+    
+      `
+      ))
+
     if (user.events.length > 0) {
       this.userProfile.innerHTML += `
       <h3>Lista de Eventos</h3>
-      <div class="last-try"> 
       <div class="data-event">
-      <ul class="list-ev">${eventItems}</u>
+      <ul>
+      <div class="list-ev">${eventItems}</div>
+      </ul>
+      <ul>
+      <div class="list-rep">${repoNames}<div>
+      </ul>
       </div>
-      </div>
-     
       `;
     }
 
