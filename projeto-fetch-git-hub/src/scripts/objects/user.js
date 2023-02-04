@@ -29,6 +29,8 @@ const user = {
     },
     setEvents(events) {
         this.events = events;
+        this.repo = events;
+        this.payload = events;
     }
 }
 
@@ -36,3 +38,5 @@ export { user }
 
 /* console.log(eventResponse[0].repo.name);
 console.log(eventResponse[0].payload.commits[0].message) */
+
+/* user.events[z]?.payload?.commits?.[0]?.message; */

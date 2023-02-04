@@ -1,34 +1,17 @@
 const screen = {
   userProfile: document.querySelector(".profile-data"),
-  renderUser(user, fetchCommitComents) {
+  renderUser(user) {
     this.userProfile.innerHTML = `<div class="info">
-        <img src="${user.avatarUrl}" alt ="foto de perfil do usuario" />
-        <div class="data">
+            <img src="${user.avatarUrl}" alt ="foto de perfil do usuario" />
+            <div class="data">
             <h1>${user.name ?? "Não possui nome cadastrado"}</h1>
             <p>${user.bio ?? "Não possui bio cadastrada"}</p>
-            <span>Seguidores: ${
-              user.followers ?? "Não possui seguidores"
-            }</span>
+            <span>Seguidores: ${user.followers ?? "Não possui seguidores"}</span>
             <span>Seguindo: ${user.following ?? "Não segue ninguém"}</span>
             </div>
             </div>
-
-            `
-    for (let i = 0; i <= 10; i++) {
-      let receiveData = user.events?.[i]?.repo?.name;
-      document.querySelector('.commits-data').innerHTML += receiveData;
-    }
-    ` 
- 
-    `
-    for (let z = 0; z <= 10; z++) {
-      let receivedComments = user.events[z]?.payload.commits?.[0]?.message;
-      document.querySelector('.comments-data').innerHTML += receivedComments;
-    }
-    
-    `
-
             `;
+
     let repositoriesItems = "";
     user.repositories.forEach(
       (repo) =>
@@ -51,6 +34,39 @@ const screen = {
                     </div>
                     `;
     }
+
+    let eventItems = "";
+    user.events.forEach(
+      (evt, index) =>
+        (eventItems += `    
+    <li class="list-of-events">
+    <span class="repo-names">
+    ${evt.repo.name}
+    </span>
+    </li>
+
+    <li class="list-of-events">
+    <span class="repo-names">
+    ${user.events[index].payload?.commits?.[0].message}
+    </span>
+    </li>
+
+    
+    `)
+    );
+
+    if (user.events.length > 0) {
+      this.userProfile.innerHTML += `
+      <h3>Lista de Eventos</h3>
+      <div class="last-try"> 
+      <div class="data-event">
+      <ul class="list-ev">${eventItems}</u>
+      </div>
+      </div>
+     
+      `;
+    }
+
   },
 
   renderNotFound() {

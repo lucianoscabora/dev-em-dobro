@@ -18,6 +18,7 @@ function validateEmptyInput(userName) {
     }
 }
 
+
 document.getElementById('input-search').addEventListener('keyup', (e) => {
     const userName = e.target.value;
     const key = e.which || e.keyCode;
@@ -29,7 +30,7 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
 })
 
 
-async function getUserData(userName) {
+async function getUserData(userName, fetchCommitComents) {
     const userResponse = await fetchUser(userName)
     const eventResponse = await fetchUserEvents(userName)
     console.log(eventResponse);
@@ -39,13 +40,15 @@ async function getUserData(userName) {
         console.log(receiveData);  
     } */
 
-   eventResponse.map((item, index) => {
+  /*  eventResponse.map((item, index) => {
+    
     const fetchCommitComents = eventResponse[index].payload.commits?.[0].message;
-    const fetchRepoNames = eventResponse[index].repo.name;
+    const fetchRepoNames =  eventResponse[index].repo.name;
     console.log(`Repositorio: ${fetchRepoNames} e Commits: ${fetchCommitComents}`)
     
-   })
+   }) */
 
+    
 
     if(userResponse.message === 'Not Found') {
         screen.renderNotFound()

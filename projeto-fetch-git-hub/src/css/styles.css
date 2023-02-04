@@ -34,6 +34,23 @@ main {
   padding: 70px 0;
 }
 
+.last-try {
+  display: flex;
+  flex-direction: row;
+  color: green;
+  margin: 32px;
+}
+
+.last-try ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.last-try ul li {
+  display: flex;
+  
+}
+
 .container {
   width: 60%; /* se for uma tela menor que 980px vai se adaptar a 70% */
   max-width: 960px; /* quando chegar em 980px para de aumentar */
@@ -163,12 +180,6 @@ main {
   display: none;
 }
 
-.event-data {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 40px;
-}
 
 @media (max-width: 1280px) {
   .container {
