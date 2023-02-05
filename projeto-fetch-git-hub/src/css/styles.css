@@ -26,20 +26,45 @@ main {
 
 .data-event {
   overflow-y: scroll;
+  width: 700px;
   text-align: left;
   border: 1px solid black;
   justify-content: space-between;
-  height: 200px;
+  height: 300px;
   display: flex;
 }
 
+.data-event::-webkit-scrollbar {
+  width: 15px;
+}
+
+.data-event::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+.data-event::-webkit-scrollbar-thumb {
+  background: blanchedalmond;
+  border-radius: 10px;
+}
+
+.event-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.list-ev .list-rep {
+  min-width: 50vw;
+}
+
 .list-ev li {
-  padding-top: 5px;
+  border-bottom: 1px solid lightgray;
+  padding: 5px;
   margin-bottom: 4px;
 }
 
 .list-rep li {
-  padding-top: 5px;
+  border-bottom: 1px solid lightgrey;
+  padding: 5px;
   margin-bottom: 4px;
 }
 

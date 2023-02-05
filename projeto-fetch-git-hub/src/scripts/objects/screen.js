@@ -45,13 +45,30 @@ const screen = {
                     `;
     }
 
+
+    let arr = []
+    for (let i = 0; i<user.events.length; i++) {
+      if (user.events[i].type === "PushEvent") {
+      arr.push(user.events[i].payload?.commits?.[0].message)
+      }
+    }
+    console.log(arr);
+
+    let arr1 = []
+    for (let i = 0; i<user.events.length; i++) {
+      if (user.events[i].type === "PushEvent") {
+      arr1.push(user.events?.[i].repo.name)
+      }
+    }
+    console.log(arr1);
+
     let repoNames = "";
-    user.events.map(
+    arr.forEach(
       (evt, index) =>
         (repoNames += `
     <li>
     <span class="repo-names">
-    ${user.events[index].payload?.commits?.[0].message}
+    ${evt}
     </span>
     </li>
     
@@ -59,12 +76,12 @@ const screen = {
     );
 
     let eventItems = "";
-    user.events.map(
+    arr1.forEach(
       (evt, index) =>
         (eventItems += `
       <li>
       <span class="repo-names">
-      ${evt.repo.name}
+      ${evt}
       </span>
       </li>
       
@@ -73,7 +90,7 @@ const screen = {
 
     if (user.events.length > 0) {
       this.userProfile.innerHTML += `
-      <h3>Lista de Eventos</h3>
+      <h3 class="event-title">Lista de Eventos</h3>
       <div class="data-event">
       <ul>
       <div class="list-ev">${eventItems}</div>
