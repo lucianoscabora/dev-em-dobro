@@ -24,49 +24,6 @@ main {
   padding: 50px 0 0;      
 }
 
-.data-event {
-  overflow-y: scroll;
-  width: 700px;
-  text-align: left;
-  border: 1px solid black;
-  justify-content: space-between;
-  height: 300px;
-  display: flex;
-}
-
-.data-event::-webkit-scrollbar {
-  width: 15px;
-}
-
-.data-event::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-}
-
-.data-event::-webkit-scrollbar-thumb {
-  background: blanchedalmond;
-  border-radius: 10px;
-}
-
-.event-title {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.list-ev .list-rep {
-  min-width: 50vw;
-}
-
-.list-ev li {
-  border-bottom: 1px solid lightgray;
-  padding: 5px;
-  margin-bottom: 4px;
-}
-
-.list-rep li {
-  border-bottom: 1px solid lightgrey;
-  padding: 5px;
-  margin-bottom: 4px;
-}
 
 .devicon-github-original{
   font-size: 60px;
@@ -178,25 +135,22 @@ main {
   justify-content: center;
 }
 
-.container .profile-data .repositories li {
-  width: 300px;
+.stats-pos {
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
-.container .profile-data .repositories li span {
-  margin: 20px;
-  align-items: center ;
-  display: flex;
+.stats-pos i {
   margin: 10px;
 }
 
-.container .profile-data .repositories li span i {
-  margin-left: 10px;
+.stats-pos i {
+  margin-right: 5px;
 }
 
 .container .profile-data .repositories ul li a{
-  min-width: 200px;
-  min-height: 200px;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid grey;  
   margin: 20px;
   display: block;
@@ -212,6 +166,49 @@ main {
 .container .profile-data.hide{
   display: none;
 }
+
+
+ /* EVENTS */ 
+
+.data-event {
+  overflow-y: scroll;
+  text-align: left;
+  border: 1px solid black;
+  justify-content: space-between;
+  height: 300px;
+  display: flex;
+}
+
+.data-event::-webkit-scrollbar {
+  width: 15px;
+}
+
+.data-event::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+.data-event::-webkit-scrollbar-thumb {
+  background: blanchedalmond;
+  border-radius: 10px;
+}
+
+.event-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.list-ev li {
+  border-bottom: 1px solid lightgray;
+  padding: 5px;
+  margin-bottom: 4px;
+}
+
+.list-rep li {
+  border-bottom: 1px solid lightgrey;
+  padding: 5px;
+  margin-bottom: 4px;
+}
+
 
 
 @media (max-width: 1280px) {
@@ -253,5 +250,10 @@ main {
   {
     width: 100%;
     padding: 0;
+  }
+
+  .data-event {
+    max-width: 200px;
+    max-height: 200px;
   }
 }

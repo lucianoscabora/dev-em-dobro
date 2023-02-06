@@ -2,14 +2,13 @@ const screen = {
   userProfile: document.querySelector(".profile-data"),
   renderUser(user) {
     this.userProfile.innerHTML = `<div class="info">
-            <img src="${user.avatarUrl}" alt ="foto de perfil do usuario" />
+            <img src="${user.avatarUrl}" alt ="user's profile picture" />
             <div class="data">
-            <h1>${user.name ?? "Não possui nome cadastrado"}</h1>
-            <p>${user.bio ?? "Não possui bio cadastrada"}</p>
-            <span>Seguidores: ${
-              user.followers ?? "Não possui seguidores"
+            <h1>${user.name ?? "Name not registered"}</h1>
+            <p>${user.bio ?? "Bio not registered"}</p>
+            <span>Followers: ${user.followers ?? "User has no followers"
             }</span>
-            <span>Seguindo: ${user.following ?? "Não segue ninguém"}</span>
+            <span>Following: ${user.following ?? "Still not following"}</span>
             </div>
             </div>
             `;
@@ -20,18 +19,14 @@ const screen = {
         (repositoriesItems += `
                 <li> 
                     <a href="${repo.html_url}" target="_blank">
-                    <span>${
-                      repo.language ?? "N/A"
-                    }<i class="fa-solid fa-laptop-code"></i></span>
-                    <span>${
-                      repo.stargazers_count
-                    }<i class="fa-regular fa-star"></i></span>
-                    <span>${
-                      repo.forks_count
-                    }<i class="fa-sharp fa-solid fa-code-fork"></i></span>
-                    <span>${
-                      repo.watchers
-                    }<i class="fa-regular fa-eye"></i></span>${repo.name} </a>
+                    <span>${repo.name}</span>
+                    <div class="stats-pos">
+                    <span><i class="fa-solid fa-laptop-code"></i>${repo.language ?? "N/A"}</span>
+                    <span><i class="fa-regular fa-star"></i>${repo.stargazers_count}</span>
+                    <span><i class="fa-sharp fa-solid fa-code-fork"></i>${repo.forks_count}</span>
+                    <span><i class="fa-regular fa-eye"></i>${repo.watchers}</span>
+                    </div>
+                    </a>
                 </li>
                 `)
     );
@@ -52,7 +47,6 @@ const screen = {
       arr.push(user.events[i].payload?.commits?.[0].message)
       }
     }
-    console.log(arr);
 
     let arr1 = []
     for (let i = 0; i<user.events.length; i++) {
@@ -60,15 +54,14 @@ const screen = {
       arr1.push(user.events?.[i].repo.name)
       }
     }
-    console.log(arr1);
 
     let repoNames = "";
     arr.forEach(
-      (evt, index) =>
+      (repos) =>
         (repoNames += `
     <li>
     <span class="repo-names">
-    ${evt}
+    ${repos}
     </span>
     </li>
     
@@ -77,11 +70,11 @@ const screen = {
 
     let eventItems = "";
     arr1.forEach(
-      (evt, index) =>
+      (events) =>
         (eventItems += `
       <li>
       <span class="repo-names">
-      ${evt}
+      ${events}
       </span>
       </li>
       
@@ -90,7 +83,7 @@ const screen = {
 
     if (user.events.length > 0) {
       this.userProfile.innerHTML += `
-      <h3 class="event-title">Lista de Eventos</h3>
+      <h3 class="event-title">Push Events list</h3>
       <div class="data-event">
       <ul>
       <div class="list-ev">${eventItems}</div>
@@ -104,7 +97,7 @@ const screen = {
   },
 
   renderNotFound() {
-    this.userProfile.innerHTML = "<h3> Usuário não encontrado </h3>";
+    this.userProfile.innerHTML = "<h3> No user found... </h3>";
   },
 };
 
