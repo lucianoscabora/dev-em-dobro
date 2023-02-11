@@ -1,20 +1,30 @@
-import Button from './components/button/button';
-import Card from './components/card/card';
+import Button from "./components/button/button";
+import Card from "./components/card/card";
 
 function App() {
   return (
     <>
-  <Button />
-  <Button />
-  <Button />
-  <Button />
-  <Card title='Titulo card 1'/>
-  <Card title='Titulo card 2'/>
-  <Card title='Titulo card 3'/>
-  <Card title='Titulo card 4'/>
-  </>
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+
+      <Card>
+        <h3>Titulo card 1</h3>
+        <p>Texto do card</p>
+      </Card>
+
+      <Card>
+        <h3>Titulo card 2</h3>
+        <p>Texto do card</p>
+      </Card>
+
+      <Card>
+        <h3>Titulo card 3</h3>
+        <p>Texto do card</p>
+      </Card>
+    </>
   );
-  
 }
 
 export default App;
