@@ -1,15 +1,13 @@
 import Button from "./components/button/button";
-import Card from "./components/card/card";
+/* import Card from "./components/card/card"; */
 
 function App() {
   return (
     <>
-      <Button />
-      <Button />
-      <Button />
-      <Button />
+      <Button></Button>
+      <Button label='Baixar CV'></Button>
 
-      <Card>
+  {/*     <Card>
         <h3>Titulo card 1</h3>
         <p>Texto do card</p>
       </Card>
@@ -22,7 +20,7 @@ function App() {
       <Card>
         <h3>Titulo card 3</h3>
         <p>Texto do card</p>
-      </Card>
+      </Card> */}
     </>
   );
 }
