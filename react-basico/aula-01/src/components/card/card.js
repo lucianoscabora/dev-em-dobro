@@ -1,23 +1,20 @@
 import React from "react";
-import '../card/card.css'
+import "../card/card.css";
 
-const Card = ({children}) => {
-    return (
-        <div className="card">
-            {children}  
-            </div>
-    )
-}
+const Card = ({ children, color, showCardColor }) => {
+  return (
+    <div
+      className="card"
+      style={{ backgroundColor: color }}
+      onClick={() => showCardColor(color)}
+    >
+      {children}
+    </div>
+  );
+};
 
-/* class Card extends React.Component {
-    render() {
-        return (
-            <div className="card">
-                <h3>{this.props.title}</h3>
-                <p>Texto do card</p>
-            </div>
-        )
-    }
-} */
+Card.defaultProps = {
+  color: "blue",
+};
 
 export default Card;
